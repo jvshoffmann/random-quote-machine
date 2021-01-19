@@ -36,3 +36,43 @@
     transform: rotate(360deg);
   }
 }
+
+html{
+  height:100%
+}
+
+body{
+  background-color: #145DA0;
+  font-family: Helvetica;
+  display:flex;
+  flex:1;
+  justify-content: center;
+  align-items: center;
+  height:100%;
+}
+
+#quote-box{
+  background-color: #B1D4E0;
+  color:#0C2D48;
+  width: 600px;
+  border-radius: 15px;
+  display: table;
+}
+
+#text{  
+  margin:30px;
+}
+
+#author{
+  margin:30px;
+  text-align:right;
+}
+#button{
+  background-color: #145DA0;
+  margin:30px;
+}
+
+button{
+  background-color: #145DA0;
+  margin:30px;
+}

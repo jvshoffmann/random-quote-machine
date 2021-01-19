@@ -59,8 +59,8 @@ class App extends React.Component{
           <div id = "author">
             author: {this.state.quotes[this.state.quoteIndex].author}
           </div>
-          <button id = "new-quote" onClick = {this.changeQuote}>Get new quote</button>
           <TwitterButton quote = {this.state.quotes[this.state.quoteIndex].quote}/>
+          <button id = "new-quote" onClick = {this.changeQuote}>Get new quote</button>
           {/* <a target = "_blank" class = "button" id = "tweet-quote"onClick = "location.href = '#'" href = {this.createTweetLink}>Share on twitter</a> */}
         </div>
         )};      
