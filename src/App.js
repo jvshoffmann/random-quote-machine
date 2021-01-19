@@ -3,7 +3,7 @@ import React from "react"
 
 function TwitterButton(props){
   
-  let link = encodeURI("twitter.com/intent/tweet?text="+props.quote);
+  let link = encodeURI("https://twitter.com/intent/tweet?text="+props.quote);
   console.log(link)
   return (
   <a 
