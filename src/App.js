@@ -1,6 +1,21 @@
 import './App.css';
 import React from "react"
 
+function TwitterButton(props){
+  
+  let link = encodeURI("twitter.com/intent/tweet?text="+props.quote);
+  console.log(link)
+  return (
+  <a 
+    target = "_blank"
+    className = "button"
+    id = "tweet-quote"
+    href = {link}
+  >
+    tweet quote
+  </a>);
+}
+
 class App extends React.Component{
   constructor(props){
     super(props);
@@ -8,8 +23,6 @@ class App extends React.Component{
       quoteIndex: 0,
       quotes: []
     }
-    // this.getRandomQuote = this.getRandomQuote.bind(this);
-    // this.changeQuote = this.changeQuote.bind(this);
   }
   getRandomQuote(quotes){
     return Math.floor(Math.random()*quotes.length);    
@@ -25,25 +38,36 @@ class App extends React.Component{
     .then(response=>response.json())
     .then((jsonData)=>{
       let quoteIndex = this.getRandomQuote(jsonData.quotes);
-      console.log(this.quoteIndex);
       this.setState({
         quoteIndex,
-        quotes: jsonData.quotes        
+        quotes: jsonData.quotes
       })})
     }
+    // createTweetLink(){
+    //   return "twitter.com/intent/tweet?text="+this.state.quotes[this.state.quoteIndex].textContent
+    // }
    
     render(){
       if(this.state.quotes.length === 0)
         return null;
       else{
-        return (<div>
-          {this.state.quotes[this.state.quoteIndex].quote}<br/>
-          author: {this.state.quotes[this.state.quoteIndex].author}
-          <button className = "newQuote" onClick = {this.changeQuote}>Get new quote</button>
-        </div>)};      
+        return (
+        <div id = "quote-box">
+          <div id = "text">
+            {this.state.quotes[this.state.quoteIndex].quote}
+          </div>
+          <div id = "author">
+            author: {this.state.quotes[this.state.quoteIndex].author}
+          </div>
+          <button id = "new-quote" onClick = {this.changeQuote}>Get new quote</button>
+          <TwitterButton quote = {this.state.quotes[this.state.quoteIndex].quote}/>
+          {/* <a target = "_blank" class = "button" id = "tweet-quote"onClick = "location.href = '#'" href = {this.createTweetLink}>Share on twitter</a> */}
+        </div>
+        )};      
     }
   
 }
+
 
 
 
