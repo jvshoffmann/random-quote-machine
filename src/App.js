@@ -57,7 +57,7 @@ class App extends React.Component{
             {this.state.quotes[this.state.quoteIndex].quote}
           </div>
           <div id = "author">
-            author: {this.state.quotes[this.state.quoteIndex].author}
+            -{this.state.quotes[this.state.quoteIndex].author}
           </div>
           <TwitterButton quote = {this.state.quotes[this.state.quoteIndex].quote}/>
           <button id = "new-quote" onClick = {this.changeQuote}>Get new quote</button>
