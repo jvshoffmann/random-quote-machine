@@ -56,7 +56,7 @@ body{
   background-color: #ddd;
   /* background-color: #B1D4E0; */
   /* color:#0C2D48; */
-  width: 30em;
+  max-width: 30em;
   border-radius: 15px;
   display: table;
   font-size:1em;
